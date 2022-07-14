@@ -3,13 +3,10 @@ $categorias = [];
 $categorias[] = 'Infantil';
 $categorias[] = 'Adolescente';
 $categorias[] = 'Adulto';
-//print_r($categorias);
 
-$nome = 'Lorena';
-$idade = 19;
+$nome = $_POST['nome'];
+$idade = $_POST['idade'];
 
-//var_dump($nome);
-//var_dump($idade);
 
 if($idade >= 6 && $idade <= 12){
     //echo 'Infantil';
@@ -30,4 +27,4 @@ if($idade >= 6 && $idade <= 12){
             echo "O nadador " .$nome. " compete na categoria Adulto";
     }
 }
-//Pausa no projeto
+?>
