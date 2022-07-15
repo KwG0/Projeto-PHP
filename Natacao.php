@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $categorias = [];
 $categorias[] = 'Infantil';
 $categorias[] = 'Adolescente';
@@ -8,27 +11,27 @@ $nome = $_POST['nome'];
 $idade = $_POST['idade'];
 
 if(empty($nome)){
-    print "O nome não pode ser vazio!";
-    return;
+    $_SESSION['mensagem-de-erro'] = "O nome não pode ser vazio!";
+    header(string 'location: ../Natação/Natacao.php');
 }
-
+//resolver o location
 if(strlen($nome) < 3){
-    print 'O nome não pode conter menos que 3 caracteres';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'O nome não pode conter menos que 3 caracteres';
+    header(string "location: Natacao.php");
 }
 
 if(strlen($nome) > 40){
-    print 'Calma lá! O nome é muito extenso';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'Calma lá! O nome é muito extenso';
+    header(string "location: Natacao.php");
 }
 if(is_numeric($nome)){
-    print 'Não digite números em seu nome!';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'Não digite números em seu nome!';
+    header(string "location: Natacao.php");
 }
 
 if(!is_numeric($idade)){
-    print 'Informe sua idade em números';
-    return;
+    $_SESSION['mensagem-de-erro'] = 'Informe sua idade em números';
+    header(string "location: Natacao.php");
 }
 
 if($idade >= 6 && $idade <= 12){
