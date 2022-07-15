@@ -1,5 +1,9 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +13,12 @@
 <body>
     <h3>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</h3>
     <form action="../Natação/Natacao.php" method="post">
+        <?php
+            $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
+            if(!empty($mensagemDeErro)) {
+                echo $mensagemDeErro;
+            }
+        ?>
         <p>Seu Nome: <input type="text" name="nome"/></p>
         <p>Sua Idade: <input type="text" name="idade"/></p>
         <p><input type="submit" value="Enviar dados"/></p>
