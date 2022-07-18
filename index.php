@@ -12,7 +12,7 @@
 </head>
 <body>
     <h3>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</h3>
-    <form action="../Natação/Natacao.php" method="post">
+    <form action="../Natação/script.php" method="post">
         <?php
             $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
             if(!empty($mensagemDeErro)) {
