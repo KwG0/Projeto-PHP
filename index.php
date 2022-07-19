@@ -40,6 +40,19 @@
         font-size: 16px;
         align-items: center;
     }
+    .resultado {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid whitesmoke;
+        border-style: dashed;
+        padding: 20px;
+        color: peachpuff;
+        text-decoration: underline whitesmoke;
+        font-weight: bolder;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
 </style>
 <body>
@@ -58,6 +71,14 @@
             <input type="submit" value="Enviar dados" class="btt"/>
         </form>
         </div>
+    </div>
+    <div class="resultado">
+        <?php
+            $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+            if(!empty($mensagemDeSucesso)) {
+                echo $mensagemDeSucesso;
+            }
+        ?>
     </div>
 </body>
 </html>
