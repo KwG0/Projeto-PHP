@@ -6,10 +6,10 @@
 
 #### Preview
 
-![Página Inicial](../Nata%C3%A7%C3%A3o/assests/inicial.png)
+![Página Inicial](/assests/inicial.png)
 
 <br>
 
-![Página Preenchida](../Nata%C3%A7%C3%A3o/assests/preenchida.png)
+![Página Preenchida](/assests/preenchida.png)
 <hr>
 
