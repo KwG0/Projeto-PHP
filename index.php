@@ -1,14 +1,13 @@
-<?php
-    session_start();
+<?php 
+include "script.php"; 
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário de Inscrição</title>
+<title>Formulário de Inscrição</title>
 </head>
 <style>
     .container {
@@ -59,13 +58,13 @@
     <div class="container">
         <h3>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</h3>
         <div class="forms">
-             <form action="../Natação/script.php" method="post" class="inputs">
-            <?php
-             $mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';
-                if(!empty($mensagemDeErro)) {
-                echo $mensagemDeErro;
-                }
-            ?>
+             <form action="../Natacao/script.php" method="post" class="inputs">
+                <?php
+                $mensagemDeErro = obterMensagemdeErro();
+                    if(!empty($mensagemDeErro)) {
+                    echo $mensagemDeErro;
+                    }
+                ?>
             <p>Seu Nome: <input type="text" name="nome"/></p>
             <p>Sua Idade: <input type="text" name="idade"/></p>
             <input type="submit" value="Enviar dados" class="btt"/>
@@ -74,11 +73,11 @@
     </div>
     <div class="resultado">
         <?php
-            $mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';
+            $mensagemDeSucesso = obterMensagemdeSucesso();
             if(!empty($mensagemDeSucesso)) {
                 echo $mensagemDeSucesso;
             }
         ?>
     </div>
 </body>
-</html>
+</html>    

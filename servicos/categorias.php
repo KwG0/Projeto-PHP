@@ -8,6 +8,7 @@ function definirCategoria(string $nome, string $idade) : ?string {
     $categorias[] = 'Adulto';
 
     if(validaNome($nome) && validaIdade($idade)){
+        removerMensagemErro();
         if($idade >= 6 && $idade <= 12){
             for($I = 0; $I <= count($categorias); $I++){
                 if($categorias[$I] == 'Infantil'){
@@ -31,6 +32,7 @@ function definirCategoria(string $nome, string $idade) : ?string {
             }
         }
     }else{
+        removerMensagemSucesso();
         return obterMensagemdeErro();
     }
 }
