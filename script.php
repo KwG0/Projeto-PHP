@@ -1,7 +1,7 @@
 <?php
-include "../Natacao/servicos/mensagemSessao.php";
-include "../Natacao/servicos/validacao.php";
-include "../Natacao/servicos/categorias.php";
+include 'servicos/validacao.php';
+include 'servicos/categorias.php';
+include 'servicos/mensagemSessao.php';
 
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];

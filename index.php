@@ -1,6 +1,4 @@
-<?php 
-include "script.php"; 
-?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -58,26 +56,26 @@ include "script.php";
     <div class="container">
         <h3>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</h3>
         <div class="forms">
-             <form action="../Natacao/script.php" method="post" class="inputs">
+            <form action="script.php" method="post" class="inputs">
+                <p>Seu Nome: <input type="text" name="nome"/></p>
+                <p>Sua Idade: <input type="text" name="idade"/></p>
+                <input type="submit" value="Enviar dados" class="btt"/>
                 <?php
-                $mensagemDeErro = obterMensagemdeErro();
-                    if(!empty($mensagemDeErro)) {
-                    echo $mensagemDeErro;
-                    }
+                    $mensagemDeErro = obterMensagemdeErro();
+                        if(!empty($mensagemDeErro)) {
+                            print $mensagemDeErro;
+                        }
                 ?>
-            <p>Seu Nome: <input type="text" name="nome"/></p>
-            <p>Sua Idade: <input type="text" name="idade"/></p>
-            <input type="submit" value="Enviar dados" class="btt"/>
-        </form>
+            </form>
         </div>
     </div>
     <div class="resultado">
         <?php
             $mensagemDeSucesso = obterMensagemdeSucesso();
             if(!empty($mensagemDeSucesso)) {
-                echo $mensagemDeSucesso;
+                print $mensagemDeSucesso;
             }
         ?>
     </div>
 </body>
-</html>    
+</html> 
