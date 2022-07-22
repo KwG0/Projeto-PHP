@@ -1,4 +1,6 @@
-
+<?php
+include "servicos/mensagemSessao.php";
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -57,15 +59,15 @@
         <h3>FORMULÁRIO PARA INSCRIÇÃO DE COMPETIDORES</h3>
         <div class="forms">
             <form action="script.php" method="post" class="inputs">
-                <p>Seu Nome: <input type="text" name="nome"/></p>
-                <p>Sua Idade: <input type="text" name="idade"/></p>
-                <input type="submit" value="Enviar dados" class="btt"/>
                 <?php
                     $mensagemDeErro = obterMensagemdeErro();
                         if(!empty($mensagemDeErro)) {
                             print $mensagemDeErro;
                         }
                 ?>
+                <p>Seu Nome: <input type="text" name="nome"/></p>
+                <p>Sua Idade: <input type="text" name="idade"/></p>
+                <input type="submit" value="Enviar dados" class="btt"/>
             </form>
         </div>
     </div>
